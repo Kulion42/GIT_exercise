@@ -27,10 +27,7 @@ int16_t main ()
 
 	while (1){
 
-		PORTB |= 1 << 5; // LED ON
-		_delay_ms(high_time); // Pauza 1 s
-		PORTB &= ~(1 << 5) ; // LED OFF
-		_delay_ms(low_time); // Pauza 1 s
+		ledBlink(high_time, low_time );
 	}
 	;
 	return 0;
