@@ -10,6 +10,14 @@
 # include <stdint.h>
 # include <util/delay.h>
 
+void ledBlink ( int16_t high_time , int16_t low_time )
+{
+PORTB |= 1 << 5; // LED ON
+_delay_ms ( high_time ); // Pauza 1s
+PORTB &= ~(1 << 5); // LED OFF
+_delay_ms ( low_time ); // Pauza 1s
+}
+
 int16_t main ()
 {
 	int16_t high_time = 500;
